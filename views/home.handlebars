@@ -1,5 +1,11 @@
-<!-- "home.handlebars" is the root "localhost:5000/" page when you are running Handlebars in Node. -->
+<!-- "./views/home.handlebars" is the root "localhost:5000/" page when you are running Handlebars in Node. -->
 
-<h1>This is my Handlebars homepage...</h1>
+<!-- The "stock" variable holds all the information for 1 stock symbol from the API. -->
+<h1>{{stock.companyName}} ({{stock.symbol}})</h1>
 
-<p>Boom! {{ stuff }}</p>
+<br/>
+
+<!-- a foreach statement in Handlebars -->
+{{#each stock}}
+	{{@key}} : {{this}}<br/>
+{{/each}}
