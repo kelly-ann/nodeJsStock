@@ -1,11 +1,52 @@
-<!-- "./views/home.handlebars" is the root "localhost:5000/" page when you are running Handlebars in Node. -->
+<!-- "./views/home.handlebars" is the root "localhost:5000/" page when you are running Handlebars via Node Package Manager (NPM). 
+
+Because this file is in the "views" folder it will be the actual code shown on the home page.
+ -->
 
 <!-- The "stock" variable holds all the information for 1 stock symbol from the API. -->
-<h1>{{stock.companyName}} ({{stock.symbol}})</h1>
 
-<br/>
+<!-- This theme is from www.getbootstrap.com. -->
+
+<div class="bg-light p-5 rounded-lg m-3">
+  <h1 class="display-4">{{stock.companyName}} ({{stock.symbol}})</h1>
+  <p class="lead">
+	{{stock.primaryExchange}}<br/>
+  </p>
+  <hr class="my-4">
+  <p>
+  	<strong>Is the USA stock market open? </strong>{{stock.isUSMarketOpen}}<br/>
+	<i><strong>Note: </strong>All prices are in US Dollars ($).</i>
+	<br/><br/>
+	<i>Normal Market Hours are from: 9:30AM-4PM EST.</i><br/>
+	<strong>Latest Price: </strong>{{stock.latestPrice}}<br/>
+	<strong>Today's High: </strong>{{stock.high}}<br/>
+	<strong>Today's Low: </strong>{{stock.low}}<br/>
+	<strong>Previous Close: </strong>{{stock.previousClose}}<br/>
+	<strong>Current Change: </strong>{{stock.change}}<br/>
+	<strong>Current % Change: </strong>{{stock.changePercent}}<br/>
+	<br/>
+	<i>Extended Market Hours are from: 4AM-9:30AM & 4PM-8PM EST.</i>
+	<strong>Extended Hours Price: </strong>{{stock.latestPrice}}<br/>
+	<strong>Extended Hours Change: </strong>{{stock.change}}<br/>
+	<strong>Extended Hours % Change: </strong>{{stock.changePercent}}<br/>
+	<br/>
+	<strong>52-week High: </strong>{{stock.week52High}}<br/>
+	<strong>52-week Low: </strong>{{stock.week52Low}}<br/>
+	<strong>Year-to-Date % Change (i.e. since Jan 1st): </strong>{{stock.ytdChange}}<br/>
+	<br/>
+	<strong>Today's Total Volume: </strong>{{stock.volume}}<br/>
+	<strong>Yesterday's Total Volume: </strong>{{stock.previousVolume}}<br/>
+	<strong>Avg Total Daily Volume: </strong>{{stock.avgTotalVolume}}<br/>
+	<br/>
+	<strong>Market Cap: </strong>{{stock.marketCap}}<br/>
+	<strong>Price-to-Earnings Ratio: </strong>{{stock.peRatio}}<br/>
+  </p>
+
+</div>
 
 <!-- a foreach statement in Handlebars -->
+<!--
 {{#each stock}}
 	{{@key}} : {{this}}<br/>
 {{/each}}
+-->
