@@ -1,0 +1,26 @@
+{
+  "name": "nodejsstock",
+  "version": "1.0.0",
+  "description": "This is a stock market web app written with Node JS and JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [
+    "stock",
+    "market",
+    "node",
+    "js",
+    "app"
+  ],
+  "author": "K-A",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
